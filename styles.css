@@ -112,7 +112,7 @@ nav a.active {
   background: linear-gradient(135deg, var(--deep-navy) 0%, #2d4a6f 100%);
   color: var(--white);
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 1rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -131,6 +131,14 @@ nav a.active {
 .hero > * {
   position: relative;
   z-index: 1;
+}
+
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
