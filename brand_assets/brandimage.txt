@@ -1,0 +1,172 @@
+1. Cover Page
+Title: INSIGHTS Brand Guidelines
+
+Subtitle: Coding & Math School
+
+Tagline (optional): “Clarity in logic. Confidence in numbers.”
+
+Center your logo prominently.
+
+2. Brand Essence
+Brand name: Insights by Minju Jacob
+
+Industry: Coding and Math School (for school students)
+
+Brand personality:
+
+Curious
+
+Supportive
+
+Structured
+
+Forward-thinking
+
+Brand promise:
+“We help students understand concepts deeply so they can solve problems with clarity and confidence.”
+
+Example line to include:
+
+“Insights is a learning space where logic, creativity, and discipline meet.”
+
+3. Logo Usage
+Section title: Logo Usage
+
+Primary logo: use the full “Insights by Minju Jacob” logo on white or very light backgrounds.
+
+Clear space: keep at least the height of the orange dot around all sides of the logo.
+
+Minimum size: do not use the logo smaller than 25 mm width in print or 120 px width on screen.
+
+Do:
+
+Use the original colors.
+
+Place on clean, uncluttered backgrounds.
+
+Don’t:
+
+Don’t stretch, rotate, or crop the logo.
+
+Don’t change colors or add shadows/outlines.
+
+Don’t place on busy or similar-colored backgrounds.
+
+4. Colors
+Pick colors directly from your logo using a color picker; label them like this:
+
+Primary colors
+
+Deep Navy (from main “i” and “Insights” text)
+
+Use for: headings, main text on light backgrounds, key icons.
+
+Teal Green (from curved path shape)
+
+Use for: accents, buttons, highlights, section dividers.
+
+Warm Orange (from top dot)
+
+Use for: call‑to‑action, highlights, progress indicators.
+
+Neutrals
+
+White
+
+Use for: backgrounds.
+
+Light Grey (define a soft grey)
+
+Use for: borders, tables, secondary backgrounds.
+
+Add a small color bar with each swatch and its HEX/RGB code (once you sample them).
+
+5. Typography
+Heading font (Brand personality: elegant + modern)
+
+Recommended: a script or modern display font similar to the “Insights” word in the logo for large titles only.
+
+Usage: Page titles, big headers, posters.
+
+Body font (Clean and easy to read)
+
+Recommended:
+
+Sans-serif options: Poppins, Montserrat, Lato, or Open Sans.
+
+Usage: Body text, worksheets, presentations, website content.
+
+Code font (for coding content)
+
+Recommended:
+
+Fira Code, JetBrains Mono, or Consolas.
+
+Usage: Code snippets, terminal output, programming tasks.
+
+Basic rules:
+
+Headings: use Deep Navy.
+
+Subheadings: Teal or Navy.
+
+Body text: Dark Grey or Navy on white.
+
+6. Imagery & Icons
+Style:
+
+Use clean, minimal illustrations of:
+
+Laptops, robots, puzzles, graphs, geometric shapes.
+
+Prefer vector icons with rounded corners and line-based style.
+
+Avoid overly realistic or cluttered photos.
+
+Example imagery guidelines:
+
+Show students collaborating, problem solving, and presenting.
+
+Use backgrounds that match brand colors (navy, teal, white).
+
+7. Tone of Voice
+How the brand should “sound” in all text:
+
+Clear and simple (avoid jargon, explain terms).
+
+Encouraging and positive (focus on growth and effort).
+
+Structured and logical (step-by-step explanations).
+
+Slightly playful, especially for younger students.
+
+Example statements to include:
+
+“Every big idea starts with one clear insight.”
+
+“Mistakes are steps toward mastery.”
+
+“We code, we calculate, we understand.”
+
+8. Applications
+Show a few mock examples (in your PNG file):
+
+Social media post (quote + logo + teal accent).
+
+Class worksheet header (logo top left, navy heading, teal underline).
+
+Certificate layout (logo centered, navy text, subtle teal border).
+
+Slide template (white background, teal bar at top, logo in corner).
+
+To turn this into a PNG:
+
+Open Canva, PowerPoint, Google Slides, or Figma.
+
+Create a document (e.g., A4 or 1920×1080).
+
+Add one page per section above.
+
+Paste in your logo and sample brand colors using a color picker.
+
+Export all pages as PNG (or one long vertical PNG if you prefer a single-page guideline)

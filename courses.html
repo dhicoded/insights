@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Insights - by MJ | Mathematics & Coding</title>
+  <meta name="description" content="Explore our Mathematics and Coding courses designed for students in India. Interactive learning with experienced teachers.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="brand_assets/logo.jpg" alt="Insights by MJ Logo">
+        <span class="logo-text">Insights</span>
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="teachers.html">Teachers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Our Courses</h1>
+    <p class="subtitle">Learn Mathematics and Coding with Expert Teachers</p>
+    <p class="tagline">Building strong foundations for the future</p>
+  </section>
+
+  <section class="container">
+    <div class="section-header">
+      <h2>Subjects We Offer</h2>
+      <p>Choose the subject that interests you and start your learning journey</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="subject-card">
+        <div class="icon">📐</div>
+        <h3>Mathematics</h3>
+        <p>From basic arithmetic to advanced problem-solving. We make math fun and understandable for every student. Building strong foundations one concept at a time.</p>
+      </div>
+      <div class="subject-card">
+        <div class="icon">💻</div>
+        <h3>Coding</h3>
+        <p>Learn programming fundamentals, logical thinking, and create your own projects. From Scratch to Python, we guide students through the world of technology.</p>
+      </div>
+    </div>
+
+    <div class="games-section">
+      <div class="section-header">
+        <h2>Fun Games & Activities</h2>
+        <p>Challenge yourself with these interactive games and sharpen your skills!</p>
+      </div>
+
+      <div class="games-grid">
+        <!-- Math Challenge -->
+        <div class="game-card">
+          <h3><span class="emoji">🧮</span> Math Challenge</h3>
+          <div class="game-area">
+            <div class="math-question" id="mathQuestion">Loading...</div>
+            <div class="math-input">
+              <input type="number" id="mathAnswer" placeholder="?" onkeydown="if(event.key === 'Enter') checkMathAnswer()">
+              <button onclick="checkMathAnswer()">Check</button>
+            </div>
+            <button onclick="newMathQuestion()" class="game-btn" style="display:block;margin:0 auto;">New Question</button>
+            <div class="math-score">Score: <span id="mathScore">0</span> | Streak: <span id="mathStreak">0</span></div>
+          </div>
+        </div>
+
+        <!-- Code Completion -->
+        <div class="game-card">
+          <h3><span class="emoji">💡</span> Code Completion</h3>
+          <div class="game-area">
+            <div class="coding-puzzle" id="codingPuzzle">
+              Loading puzzle...
+            </div>
+            <div class="coding-options" id="codingOptions"></div>
+            <div class="coding-feedback" id="codingFeedback"></div>
+            <button onclick="newCodingPuzzle()" class="game-btn" style="display:block;margin:1rem auto 0;">Next Puzzle</button>
+          </div>
+        </div>
+
+        <!-- Pattern Finder -->
+        <div class="game-card">
+          <h3><span class="emoji">🔍</span> Pattern Finder</h3>
+          <div class="game-area">
+            <p style="text-align:center;margin-bottom:1rem;color:var(--body-text);">Find the next number in the sequence:</p>
+            <div class="pattern-seq" id="patternSequence"></div>
+            <div class="math-input">
+              <input type="number" id="patternAnswer" placeholder="?" onkeydown="if(event.key === 'Enter') checkPatternAnswer()">
+              <button onclick="checkPatternAnswer()">Check</button>
+            </div>
+            <button onclick="newPattern()" class="game-btn" style="display:block;margin:0 auto;">New Pattern</button>
+            <div class="math-score">Score: <span id="patternScore">0</span></div>
+          </div>
+        </div>
+
+        <!-- Word Scramble -->
+        <div class="game-card">
+          <h3><span class="emoji">✂️</span> Word Scramble</h3>
+          <div class="game-area">
+            <p style="text-align:center;margin-bottom:1rem;color:var(--body-text);">Unscramble the letters to form a math or coding word:</p>
+            <div class="scrambled-word" id="scrambledWord">Loading...</div>
+            <div class="scramble-input">
+              <input type="text" id="scrambleAnswer" placeholder="Your answer" onkeydown="if(event.key === 'Enter') checkScrambleAnswer()">
+              <button onclick="checkScrambleAnswer()">Check</button>
+            </div>
+            <button onclick="newScramble()" class="game-btn" style="display:block;margin:0 auto;">New Word</button>
+            <div class="math-score">Score: <span id="scrambleScore">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Insights - by MJ. All Rights Reserved.</p>
+    <p class="tagline">"Every big idea starts with one clear insight."</p>
+  </footer>
+
+  <script>
+    // Math Game
+    let mathScore = 0;
+    let mathStreak = 0;
+    let currentMathAnswer = 0;
+
+    function generateMathQuestion() {
+      const operations = ['+', '-', '×'];
+      const op = operations[Math.floor(Math.random() * operations.length)];
+      let a, b, answer;
+
+      if (op === '+') {
+        a = Math.floor(Math.random() * 50) + 1;
+        b = Math.floor(Math.random() * 50) + 1;
+        answer = a + b;
+      } else if (op === '-') {
+        a = Math.floor(Math.random() * 50) + 10;
+        b = Math.floor(Math.random() * a) + 1;
+        answer = a - b;
+      } else {
+        a = Math.floor(Math.random() * 12) + 1;
+        b = Math.floor(Math.random() * 12) + 1;
+        answer = a * b;
+      }
+
+      currentMathAnswer = answer;
+      document.getElementById('mathQuestion').textContent = a + ' ' + op + ' ' + b + ' = ?';
+      document.getElementById('mathAnswer').value = '';
+    }
+
+    function checkMathAnswer() {
+      const userAnswer = parseInt(document.getElementById('mathAnswer').value);
+      const el = document.getElementById('mathQuestion');
+      if (userAnswer === currentMathAnswer) {
+        mathScore += 10 + (mathStreak * 2);
+        mathStreak++;
+        el.style.color = '#22c55e';
+      } else {
+        mathStreak = 0;
+        el.style.color = '#ef4444';
+      }
+      document.getElementById('mathScore').textContent = mathScore;
+      document.getElementById('mathStreak').textContent = mathStreak;
+      setTimeout(() => {
+        el.style.color = 'var(--deep-navy)';
+        generateMathQuestion();
+      }, 800);
+    }
+
+    function newMathQuestion() {
+      generateMathQuestion();
+    }
+
+    // Coding Puzzle Game
+    const codingPuzzles = [
+      { code: 'print("Hello")', hint: 'Display text on screen', options: ['display', 'print', 'show', 'echo'], answer: 'print' },
+      { code: 'for i in range(10):', hint: 'Repeat code multiple times', options: ['repeat', 'loop', 'for', 'while'], answer: 'for' },
+      { code: 'if x > 5:', hint: 'Make decisions in code', options: ['check', 'if', 'when', 'case'], answer: 'if' },
+      { code: 'my_list.append(x)', hint: 'Add item to a list', options: ['add', 'insert', 'append', 'push'], answer: 'append' },
+      { code: 'len(text)', hint: 'Find the length of something', options: ['length', 'size', 'len', 'count'], answer: 'len' },
+      { code: 'def my_func():', hint: 'Create a reusable block of code', options: ['create', 'make', 'def', 'function'], answer: 'def' },
+      { code: 'import random', hint: 'Bring in external code', options: ['include', 'import', 'use', 'load'], answer: 'import' },
+      { code: 'return result', hint: 'Send a value back from a function', options: ['give', 'send', 'return', 'output'], answer: 'return' },
+    ];
+    let currentPuzzleIndex = 0;
+    let shuffledOptions = [];
+
+    function shuffleArray(array) {
+      const shuffled = [...array];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    }
+
+    function newCodingPuzzle() {
+      currentPuzzleIndex = Math.floor(Math.random() * codingPuzzles.length);
+      const puzzle = codingPuzzles[currentPuzzleIndex];
+      shuffledOptions = shuffleArray(puzzle.options);
+
+      document.getElementById('codingPuzzle').innerHTML = '<span class="hint">// ' + puzzle.hint + '</span><br><br>' + puzzle.code.replace(puzzle.answer, '<span class="blank">?</span>');
+      document.getElementById('codingFeedback').textContent = '';
+
+      const optionsContainer = document.getElementById('codingOptions');
+      optionsContainer.innerHTML = '';
+      shuffledOptions.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.textContent = opt;
+        btn.onclick = () => checkCodingAnswer(opt, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function checkCodingAnswer(answer, btn) {
+      const puzzle = codingPuzzles[currentPuzzleIndex];
+      const buttons = document.querySelectorAll('.coding-options button');
+
+      if (answer === puzzle.answer) {
+        btn.classList.add('correct');
+        document.getElementById('codingFeedback').textContent = '✓ Correct! Well done!';
+        document.getElementById('codingFeedback').style.color = '#22c55e';
+        buttons.forEach(b => b.disabled = true);
+      } else {
+        btn.classList.add('wrong');
+        document.getElementById('codingFeedback').textContent = '✗ Try the next one!';
+        document.getElementById('codingFeedback').style.color = '#ef4444';
+        setTimeout(() => newCodingPuzzle(), 1200);
+      }
+    }
+
+    // Pattern Recognition Game
+    let patternAnswer = 0;
+    let patternScore = 0;
+
+    function generatePattern() {
+      const patterns = [
+        { seq: [2, 4, 6, 8], diff: 2 },
+        { seq: [3, 6, 9, 12], diff: 3 },
+        { seq: [5, 10, 15, 20], diff: 5 },
+        { seq: [1, 4, 9, 16], diff: 'square' },
+        { seq: [2, 6, 12, 20], diff: 'triangular' },
+        { seq: [1, 1, 2, 3, 5], diff: 'fibonacci' },
+      ];
+
+      const pattern = patterns[Math.floor(Math.random() * patterns.length)];
+      const seq = [...pattern.seq];
+
+      if (pattern.diff === 'fibonacci') {
+        patternAnswer = seq[seq.length - 1] + seq[seq.length - 2];
+      } else if (pattern.diff === 'square') {
+        patternAnswer = Math.pow(Math.sqrt(seq[seq.length - 1]) + 1, 2);
+      } else if (pattern.diff === 'triangular') {
+        patternAnswer = seq[seq.length - 1] + seq.length;
+      } else {
+        patternAnswer = seq[seq.length - 1] + pattern.diff;
+      }
+
+      const container = document.getElementById('patternSequence');
+      container.innerHTML = '';
+      seq.forEach((n, i) => {
+        const span = document.createElement('span');
+        span.className = 'pattern-num';
+        span.textContent = n;
+        container.appendChild(span);
+      });
+      const q = document.createElement('span');
+      q.className = 'pattern-num question';
+      q.textContent = '?';
+      container.appendChild(q);
+
+      document.getElementById('patternAnswer').value = '';
+    }
+
+    function checkPatternAnswer() {
+      const userAnswer = parseInt(document.getElementById('patternAnswer').value);
+      if (userAnswer === patternAnswer) {
+        patternScore += 15;
+        document.getElementById('patternSequence').style.color = '#22c55e';
+      } else {
+        document.getElementById('patternSequence').style.color = '#ef4444';
+      }
+      document.getElementById('patternScore').textContent = patternScore;
+      setTimeout(() => {
+        document.getElementById('patternSequence').style.color = 'var(--deep-navy)';
+        generatePattern();
+      }, 800);
+    }
+
+    function newPattern() {
+      generatePattern();
+    }
+
+    // Word Scramble Game
+    const scrambleWords = [
+      'ADD', 'SUBTRACT', 'MULTIPLY', 'DIVIDE', 'NUMBER', 'EQUATION',
+      'VARIABLE', 'FUNCTION', 'LOOP', 'ARRAY', 'STRING', 'INTEGER',
+      'PRINT', 'INPUT', 'DATA', 'CODE', 'DEBUG', 'ALGORITHM'
+    ];
+    let currentWord = '';
+    let scrambledWord = '';
+
+    function scrambleWord(word) {
+      const arr = word.split('');
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      const scrambled = arr.join('');
+      return scrambled === word ? scrambleWord(word) : scrambled;
+    }
+
+    function newScramble() {
+      currentWord = scrambleWords[Math.floor(Math.random() * scrambleWords.length)];
+      scrambledWord = scrambleWord(currentWord);
+      while (scrambledWord === currentWord) {
+        scrambledWord = scrambleWord(currentWord);
+      }
+      document.getElementById('scrambledWord').textContent = scrambledWord;
+      document.getElementById('scrambleAnswer').value = '';
+    }
+
+    function checkScrambleAnswer() {
+      const userAnswer = document.getElementById('scrambleAnswer').value.toUpperCase();
+      if (userAnswer === currentWord) {
+        document.getElementById('scrambleScore').textContent = parseInt(document.getElementById('scrambleScore').textContent) + 10;
+        document.getElementById('scrambledWord').style.color = '#22c55e';
+      } else {
+        document.getElementById('scrambledWord').style.color = '#ef4444';
+      }
+      setTimeout(() => {
+        document.getElementById('scrambledWord').style.color = 'var(--deep-navy)';
+        newScramble();
+      }, 800);
+    }
+
+    // Initialize all games
+    window.onload = function() {
+      generateMathQuestion();
+      newCodingPuzzle();
+      generatePattern();
+      newScramble();
+    };
+  </script>
+</body>
+</html>
